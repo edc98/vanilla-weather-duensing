@@ -9,17 +9,8 @@ ul {
   padding: 0;
 }
 
-li {
-  list-style-type: none;
-  display: inline;
-}
-
 .emoji {
   font-size: 30px;
-}
-
-.temperature {
-  font-size: 40px;
 }
 
 .row {
@@ -34,5 +25,23 @@ small {
 
 .location {
   font-weight: bold;
-  font-size: 30px;
+  font-size: 40px;
+  padding: 1px;
+}
+
+.day-time {
+  font-size: 20px;
+  padding: 10px;
+}
+
+.degrees {
+  font-size: 2rem;
+}
+
+.looking-like {
+  font-size: 20px;
+}
+
+.temperature {
+  font-size: 4rem;
 }
