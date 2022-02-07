@@ -15,13 +15,28 @@ li {
 }
 
 .emoji {
-  font-size: 80px;
+  font-size: 30px;
 }
 
 .temperature {
   font-size: 40px;
 }
 
-.col-4 {
+.row {
   text-align: center;
+}
+
+small {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.location {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.city-input {
+  width: 100px;
 }
