@@ -10,59 +10,64 @@
     <link rel = "stylesheet" href = "src/style.css" />
 </head>
 <body>
-    <h1>
-        Weather
-    </h1>
-
-    <form id = "search-engine">
-        <div class = "row">
-            <div class ="col-7">
-                <input id = "city-input" placeholder = "search" autocomplete="off" autofocus = "on" />
+    <div class = "container">
+        <div class = "weather"> 
+        <h1>
+            Weather
+        </h1>
+        
+        <form id="search-engine">
+            <div class="row">
+                <div class="col-7">
+                    <input id="city-input" placeholder="search" autocomplete="off" autofocus="on" />
+                </div>
+                <div class="col-3">
+                    <input type="submit" class="btn btn-primary w-100" id="city-submission" value="Search" />
+                </div>
             </div>
-            <div class = "col-3">
-                <input type="submit" class = "btn btn-primary w-100" id = "city-submission" value ="Search" />
+        </form>
+        
+        <div class="row">
+            <div class="col-6" class="other-info">
+                <div class="location">
+                    New York
+                </div>
+                <div class="day-time">
+                    Monday 1:45pm
+                </div>
+                <div class="percipitation">
+                    Percipitation: 16%
+                </div>
+                <div class="humidity">
+                    Humidity: 94%
+                </div>
+                <div class="wind">
+                    Wind: 13 km/hr
+                </div>
+            </div>
+            <div class="col-4" class="temp">
+                <span class="emoji">
+                    ☁️
+                </span>
+                <span id="temperature"> 37 </span>
+                <span id="degrees">
+                    <span id="fahrenheit">°F</span> | <span id="celcius">°C</span>
+                </span>
+                <div class="looking-like">
+                    Cloudy
+                </div>
             </div>
         </div>
-    </form>
-
-    <div class = "row">
-        <div class="col-6" class="other-info">
-            <div class = "location">
-                New York
-            </div>
-            <div class = "day-time">
-                Monday 1:45pm
-            </div>
-            <div class="percipitation">
-                Percipitation: 16%
-            </div>
-            <div class="humidity">
-                Humidity: 94%
-            </div>
-            <div class="wind">
-                Wind: 13 km/hr
-            </div>
-        </div> 
-        <div class = "col-4" class = "temp">
-            <span class = "emoji">
-                ☁️
-            </span>
-            <span id = "temperature"> 37 </span> 
-            <span id = "degrees">
-                <span id="fahrenheit">°F</span> | <span id="celcius">°C</span>
-            </span>
-            <div class="looking-like">
-                Cloudy
-            </div>
+        
+        <small>
+            <a class="github-link" href="https://github.com/edc98/vanilla-weather-duensing" target="_blank">
+                Open-source code
+            </a>
+            ,by Emma Duensing
+        </small>
         </div>
     </div>
-
-    <small>
-        <a class = "github-link" href = "https://github.com/edc98/vanilla-weather-duensing" target = "_blank">
-            Open-source code
-        </a> 
-        ,by Emma Duensing
-    </small>
+    
 
     <script src = "src/app.js"></script>
 </body>

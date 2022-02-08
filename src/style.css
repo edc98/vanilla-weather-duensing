@@ -1,12 +1,7 @@
 h1 {
-  color: red;
+  color: #631357;
   font-size: 50px;
   text-align: center;
-}
-
-ul {
-  text-align: center;
-  padding: 0;
 }
 
 .emoji {
@@ -27,6 +22,7 @@ small {
   font-weight: bold;
   font-size: 40px;
   padding: 1px;
+  color: #631357;
 }
 
 .day-time {
@@ -42,6 +38,39 @@ small {
   font-size: 20px;
 }
 
-.temperature {
-  font-size: 4rem;
+body {
+  background: #f6e4ad;
+}
+
+.city-submission {
+  background: #e84a5f;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+}
+
+.weather {
+  background: #f9f9f9;
+  border-radius: 15px;
+  padding: 40px;
+  color: #878787;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.day-time,
+.percipitation,
+.humidity,
+.wind,
+.looking-like {
+  color: #000;
+}
+
+.celcius {
+  font-size: 400px;
 }
