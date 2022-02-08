@@ -1,6 +1,7 @@
-function findCity(event) {
+function findCity(event) {  //takes city from search bar and uses axios to find city
     event.preventDefault();
     let newCity = document.querySelector("#city-input");
+    console.log(`${newCity.value}`);
     let apiKey = "7e2d6c3d38a855b033f6e213b1c9eca4";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${newCity.value}&appid=${apiKey}&units=metric`;
 
@@ -10,8 +11,9 @@ function findCity(event) {
 let citySearch = document.querySelector("#search-engine");
 citySearch.addEventListener("submit", findCity);
 
-function displayWeather(response){
+function displayWeather(response){  //takes data from axios related to the weather for the city searched
     let temp = Math.round(response.data.main.temp);
+    console.log(`${temp}`);
     let temperatureElement = document.querySelector("#temper");
     temperatureElement.innerHTML = `${temp}`;
 
@@ -23,20 +25,6 @@ function displayWeather(response){
     let humidityElement = document.querySelector("#humidity");
     humidityElement.innerHTML = `Humidity: ${humidity}%`;
 }
-
-function replaceTitle(event) {
-  event.preventDefault();
-  let title = document.querySelector("#location");
-  let newTitle = document.querySelector("#city-input");
-  if (newTitle) {
-    title.innerHTML = `${newTitle.value}`;
-  } else {
-    title.innerHTML = `Current Location`;
-  }
-}
-
-let form = document.querySelector("#search-engine");
-form.addEventListener("submit", replaceTitle);
 
 let now = new Date();
 
@@ -58,12 +46,22 @@ if(minutes<10){
     minutes = `0${minutes}`;
 }
 
-function localTime(){
+function localTime(){   //gets the time for the city searched
     let currentTime = document.querySelector("#local-time");
     currentTime.innerHTML = `${hours}:${minutes}`;
 }
 
-function currentDay() {
+function currentDay() {  //gets day of the week for the city searched
     let currentDay = document.querySelector("#current-day");
     currentDay.innerHTML = `${day}`;
 }
+
+function replaceTitle(event) {  //replaces title of "New York" (default) with the city searched
+  event.preventDefault();
+  let location = document.querySelector("#location");
+  let newLocation = document.querySelector("#city-input");
+  location.innerHTML = `${newLocation.value}`;
+}
+
+let form = document.querySelector("#search-engine");
+form.addEventListener("submit", replaceTitle);
