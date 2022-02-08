@@ -30,8 +30,9 @@ small {
   padding: 10px;
 }
 
-.degrees {
+.degrees small {
   font-size: 2rem;
+  display: inline;
 }
 
 .looking-like {
@@ -71,6 +72,10 @@ body {
   color: #000;
 }
 
-.celcius {
-  font-size: 400px;
+.temperature strong {
+  font-size: 50px;
+}
+
+.temperature {
+  color: #000;
 }
