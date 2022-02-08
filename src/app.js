@@ -23,3 +23,47 @@ function displayWeather(response){
     let humidityElement = document.querySelector("#humidity");
     humidityElement.innerHTML = `Humidity: ${humidity}%`;
 }
+
+function replaceTitle(event) {
+  event.preventDefault();
+  let title = document.querySelector("#location");
+  let newTitle = document.querySelector("#city-input");
+  if (newTitle) {
+    title.innerHTML = `${newTitle.value}`;
+  } else {
+    title.innerHTML = `Current Location`;
+  }
+}
+
+let form = document.querySelector("#search-engine");
+form.addEventListener("submit", replaceTitle);
+
+let now = new Date();
+
+let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+];
+
+let day = days[now.getDay()];
+let hours = now.getHours();
+let minutes = now.getMinutes();
+
+if(minutes<10){
+    minutes = `0${minutes}`;
+}
+
+function localTime(){
+    let currentTime = document.querySelector("#local-time");
+    currentTime.innerHTML = `${hours}:${minutes}`;
+}
+
+function currentDay() {
+    let currentDay = document.querySelector("#current-day");
+    currentDay.innerHTML = `${day}`;
+}
