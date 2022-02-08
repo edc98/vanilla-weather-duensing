@@ -13,7 +13,7 @@ citySearch.addEventListener("submit", findCity);
 
 function displayWeather(response){  //takes data from axios related to the weather for the city searched
     let temp = Math.round(response.data.main.temp);
-    console.log(`${temp}`);
+    console.log(response);
     let temperatureElement = document.querySelector("#temper");
     temperatureElement.innerHTML = `${temp}`;
 
@@ -24,6 +24,10 @@ function displayWeather(response){  //takes data from axios related to the weath
     let humidity = response.data.main.humidity;
     let humidityElement = document.querySelector("#humidity");
     humidityElement.innerHTML = `Humidity: ${humidity}%`;
+
+    let looking = response.data.weather[0].description;
+    let lookingLikeElement = document.querySelector("#looking-like");
+    lookingLikeElement.innerHTML = `${looking}`;
 }
 
 let now = new Date();

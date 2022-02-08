@@ -18,33 +18,8 @@ small {
   text-align: center;
 }
 
-.location {
-  font-weight: bold;
-  font-size: 40px;
-  padding: 1px;
-  color: #631357;
-}
-
-.day-time {
-  font-size: 20px;
-  padding: 10px;
-}
-
-.degrees small {
-  font-size: 2rem;
-  display: inline;
-}
-
-.looking-like {
-  font-size: 20px;
-}
-
 body {
   background: #f6e4ad;
-}
-
-.city-submission {
-  background: #e84a5f;
 }
 
 .container {
@@ -64,19 +39,30 @@ body {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
-.day-time,
-.humidity,
-.wind,
-.looking-like {
+#location {
+  font-size: 40px;
   color: #000;
 }
 
-.temper {
-  font-size: 50px;
+#day-time,
+#humidity,
+#wind,
+#looking-like {
+  color: #000;
 }
 
-.temperature {
+#temper {
+  font-size: 35px;
   color: #000;
+}
+
+#city-input {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#city-submission {
+  border-radius: 8px;
 }
 
 small {
