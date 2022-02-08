@@ -65,17 +65,20 @@ body {
 }
 
 .day-time,
-.percipitation,
 .humidity,
 .wind,
 .looking-like {
   color: #000;
 }
 
-.temperature strong {
+.temper {
   font-size: 50px;
 }
 
 .temperature {
+  color: #000;
+}
+
+small {
   color: #000;
 }
