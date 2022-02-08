@@ -12,10 +12,10 @@ let citySearch = document.querySelector("#search-engine");
 citySearch.addEventListener("submit", findCity);
 
 function displayWeather(response){  //takes data from axios related to the weather for the city searched
-    let temp = Math.round(response.data.main.temp);
+    cTemp = Math.round(response.data.main.temp);
     console.log(response);
     let temperatureElement = document.querySelector("#temper");
-    temperatureElement.innerHTML = `${temp}`;
+    temperatureElement.innerHTML = `${cTemp}`;
 
     let wind = response.data.wind.speed;
     let windElement = document.querySelector("#wind");
@@ -69,3 +69,24 @@ function replaceTitle(event) {  //replaces title of "New York" (default) with th
 
 let form = document.querySelector("#search-engine");
 form.addEventListener("submit", replaceTitle);
+
+function convertF(event){
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temper");
+    let fTemp = Math.round((cTemp*9)/5+32);
+    temperatureElement.innerHTML = `${fTemp}`;
+}
+
+let cTemp = null;
+
+let currentF = document.querySelector("#fahrenheit");
+currentF.addEventListener("click", convertF);
+
+function convertC(event){
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temper");
+    temperatureElement.innerHTML = cTemp;
+}
+
+let currentC = document.querySelector("#celcius");
+currentC.addEventListener("click", convertC);
