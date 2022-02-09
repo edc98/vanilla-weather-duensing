@@ -15,7 +15,7 @@ function displayWeather(response){  //takes data from axios related to the weath
     cTemp = Math.round(response.data.main.temp);
     console.log(response);
     let temperatureElement = document.querySelector("#temper");
-    temperatureElement.innerHTML = `${cTemp}`;
+    temperatureElement.innerHTML = `${cTemp}°`;
 
     let wind = response.data.wind.speed;
     let windElement = document.querySelector("#wind");
@@ -60,6 +60,9 @@ function currentDay() {  //gets day of the week for the city searched
     currentDay.innerHTML = `${day}`;
 }
 
+localTime();
+currentDay();
+
 function replaceTitle(event) {  //replaces title of "New York" (default) with the city searched
   event.preventDefault();
   let location = document.querySelector("#location");
@@ -74,7 +77,7 @@ function convertF(event){
     event.preventDefault();
     let temperatureElement = document.querySelector("#temper");
     let fTemp = Math.round((cTemp*9)/5+32);
-    temperatureElement.innerHTML = `${fTemp}`;
+    temperatureElement.innerHTML = `${fTemp}°`;
 }
 
 let cTemp = null;
@@ -85,7 +88,7 @@ currentF.addEventListener("click", convertF);
 function convertC(event){
     event.preventDefault();
     let temperatureElement = document.querySelector("#temper");
-    temperatureElement.innerHTML = cTemp;
+    temperatureElement.innerHTML = `${cTemp}°`;
 }
 
 let currentC = document.querySelector("#celcius");

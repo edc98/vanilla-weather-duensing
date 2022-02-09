@@ -1,11 +1,11 @@
 h1 {
-  color: #631357;
+  color: #8a1253;
   font-size: 50px;
   text-align: center;
 }
 
 .emoji {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .row {
@@ -19,15 +19,16 @@ small {
 }
 
 body {
-  background: #f6e4ad;
+  background: #fcf4d9;
 }
 
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 150px;
+  padding-left: 150px;
   margin-right: auto;
   margin-left: auto;
   box-sizing: border-box;
+  padding-top: 100px;
 }
 
 .weather {
@@ -63,6 +64,8 @@ body {
 
 #city-submission {
   border-radius: 8px;
+  background: #c51350;
+  color: #000;
 }
 
 small {
