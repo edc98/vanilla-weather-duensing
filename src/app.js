@@ -28,6 +28,11 @@ function displayWeather(response){  //takes data from axios related to the weath
     let looking = response.data.weather[0].description;
     let lookingLikeElement = document.querySelector("#looking-like");
     lookingLikeElement.innerHTML = `${looking}`;
+
+    console.log(response.data.weather[0].icon);
+
+    let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 let now = new Date();
