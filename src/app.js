@@ -11,6 +11,15 @@ function findCity(event) {  //takes city from search bar and uses axios to find 
 let citySearch = document.querySelector("#search-engine");
 citySearch.addEventListener("submit", findCity);
 
+function getForecast(coordinates){  //takes coordinates from displayWeather from api and sends them off to axios to be displayed in forecast function
+    console.log(coordinates);
+    let apiKey = `7e2d6c3d38a855b033f6e213b1c9eca4`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+    console.log(apiUrl);
+
+    axios.get(apiUrl).then(displayForecast);
+}
+
 function displayWeather(response){  //takes data from axios related to the weather for the city searched
     cTemp = Math.round(response.data.main.temp);
     console.log(response);
@@ -33,6 +42,8 @@ function displayWeather(response){  //takes data from axios related to the weath
 
     let iconElement = document.querySelector("#icon");
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+
+    getForecast(response.data.coord);
 }
 
 let now = new Date();
@@ -78,7 +89,7 @@ function replaceTitle(event) {  //replaces title of "New York" (default) with th
 let form = document.querySelector("#search-engine");
 form.addEventListener("submit", replaceTitle);
 
-function convertF(event){
+function convertF(event){   //converts global variable cTemp that is taken from axios data to fahrenheit
     event.preventDefault();
     let temperatureElement = document.querySelector("#temper");
     let fTemp = Math.round((cTemp*9)/5+32);
@@ -90,7 +101,7 @@ let cTemp = null;
 let currentF = document.querySelector("#fahrenheit");
 currentF.addEventListener("click", convertF);
 
-function convertC(event){
+function convertC(event){   //displays temp from global variable cTemp in celcius
     event.preventDefault();
     let temperatureElement = document.querySelector("#temper");
     temperatureElement.innerHTML = `${cTemp}°`;
@@ -99,7 +110,8 @@ function convertC(event){
 let currentC = document.querySelector("#celcius");
 currentC.addEventListener("click", convertC);
 
-function displayForecast(){
+function displayForecast(response){ //takes response from axios to get forecast for the next 5 days for a paticular location
+    console.log(response.data.daily);
     let forecastElement = document.querySelector("#forecast");
     let forecastHTML = `<div class = "row">`;
     let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
@@ -123,5 +135,3 @@ function displayForecast(){
     forecastHTML = forecastHTML + `</div`;
     forecastElement.innerHTML = forecastHTML;
 }
-
-displayForecast();
